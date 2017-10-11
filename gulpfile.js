@@ -22,6 +22,10 @@ gulp.task('watch', function(){
   gulp.watch('src/*.html', ['copyhtml']);
 });
 
+gulp.task('sassqwatch', function(){
+  gulp.watch('src/assets/sass/*.scss', ['sass']);
+});
+
 // [say] - Logs Message
 gulp.task('say', function(){
   return console.log('Gulp is running...');
