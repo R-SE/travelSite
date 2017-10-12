@@ -3,6 +3,7 @@ const imagemin = require('gulp-imagemin');
 const mini = require('gulp-uglify');
 const sass = require('gulp-sass');
 const cat = require('gulp-concat');
+const norm = require('node-normalize-scss');
 
 /*TOP LEVEL FUNCTIONS REMINDER
 gulp.task - DEFINE TASKS
@@ -18,7 +19,7 @@ gulp.task('default', ['say', 'copyhtml', 'scripts', 'imagemin', 'sass']);
 gulp.task('watch', function(){
   gulp.watch('src/scripts/*.js', ['scripts']);
   gulp.watch('src/assets/images/*', ['imagemin']);
-  gulp.watch('src/assets/sass/*.scss', ['sass']);
+  gulp.watch('src/assets/sass/**/*.scss', ['sass']);
   gulp.watch('src/*.html', ['copyhtml']);
 });
 
@@ -54,7 +55,7 @@ gulp.task('mini', () =>
 // [sass] - Runs CSS compiler through SASS
 gulp.task('sass', () =>
   gulp.src('src/assets/sass/*.scss')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({includePaths: norm.includePaths}).on('error', sass.logError))
     .pipe(gulp.dest('dist/assets/css'))
 );
 

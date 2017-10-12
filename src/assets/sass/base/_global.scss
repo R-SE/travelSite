@@ -1,0 +1,16 @@
+$darkGrey: #333;
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $darkGrey;
+    background-color: cyan;
+
+    h1 {
+      color: rgb(89,132,173);
+
+    }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
