@@ -1,0 +1,10 @@
+@mixin tablet {
+   @media (min-width: #{$bp-tablet}){
+    @content;
+  }
+};
+@mixin laptop {
+   @media (min-width: #{$bp-laptop}){
+    @content;
+  }
+};

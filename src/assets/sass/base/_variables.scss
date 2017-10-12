@@ -4,5 +4,11 @@ $darkGrey: #343434;
 $orange: #d59541;
 $placeholder: lime;
 
+//most popular resolutions are 360x640, 375x667, 1366x768, 1920x1080 as of 2017
+$bp-tablet: 420px;
+$bp-laptop: 1250px;
+$bp-desktop: 1800px;
+
+
 // @import themes here
 //e.g. @import "../themes/_halloween";

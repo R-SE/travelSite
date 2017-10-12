@@ -62,7 +62,8 @@ gulp.task('sass', function() {
   return gulp.src('src/assets/sass/*.scss')
     .pipe(sass({
       includePaths: norm.includePaths
-    }).on('error', sass.logError))
+    })
+    .on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false

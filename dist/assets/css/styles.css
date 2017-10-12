@@ -412,21 +412,44 @@ img {
     left: 0;
     width: 100%;
     text-align: center; }
-  .large-hero__title, .large-hero__subtitle {
+  .large-hero__title {
     font-weight: 300;
     color: #2f5572;
-    font-size: 4.8rem;
-    margin: 0; }
+    margin: 0;
+    font-size: 1.1rem; }
+    @media (min-width: 420px) {
+      .large-hero__title {
+        font-size: 2rem; } }
+    @media (min-width: 1250px) {
+      .large-hero__title {
+        font-size: 4rem; } }
   .large-hero__subtitle {
-    font-size: 2.5rem; }
+    font-weight: 300;
+    color: #2f5572;
+    margin: 0;
+    font-size: .8rem; }
+    @media (min-width: 420px) {
+      .large-hero__subtitle {
+        font-size: 1.2rem; } }
+    @media (min-width: 1250px) {
+      .large-hero__subtitle {
+        font-size: 2.6rem; } }
   .large-hero__description {
     color: white;
-    font-size: 1.875rem;
+    font-size: .8rem;
     font-weight: 100;
     text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
-    max-width: 30rem;
+    max-width: 15rem;
     margin-right: auto;
     margin-left: auto; }
+    @media (min-width: 420px) {
+      .large-hero__description {
+        font-size: 1.3rem;
+        max-width: 20rem; } }
+    @media (min-width: 1250px) {
+      .large-hero__description {
+        font-size: 2rem;
+        max-width: 30rem; } }
 
 .btn {
   background-color: #2f5572;
