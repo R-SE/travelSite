@@ -1,7 +1,10 @@
+// RESET
+@import "normalize.scss";
+
 // BASE
+@import "base/_variables.scss";
 @import "base/_global";
 
 // MODULES
 @import "modules/_large-hero";
-
-@import "normalize.scss";
+@import "modules/_btn";

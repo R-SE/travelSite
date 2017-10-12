@@ -1,0 +1,17 @@
+// DEFAULT COLORS
+$navyBlue: #2f5572;
+$transBlack: rgba(0, 0, 0, .1);
+$darkGrey: #343434;
+$orange: #d59541;
+
+//HALLOWEEN COLORS
+$pumpkin: rgb(214, 103, 34);
+$darkGray: rgb(46,46,46);
+$brown: rgb(64,42,13);
+$spookyPurple: rgb(59,5,75);
+$transRed: rgba(145,0,0,.79);
+
+// OVERRIDES
+$navyBlue: $spookyPurple;
+$orange: $pumpkin;
+$transBlack: $transRed;
