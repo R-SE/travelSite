@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   color: $darkGrey;
@@ -13,7 +17,13 @@ strong {
   font-weight: bold;
 }
 
+a {
+  color: $orange;
+}
+
 //global reusable classes
+
+
 
 .t-center {
   text-align: center;
@@ -25,6 +35,10 @@ strong {
   text-align: right;
 }
 
-* {
-  box-sizing: border-box;
+.margin-top-none {
+  margin-top: 0;
+}
+
+.margin-bottom-none {
+  margin-bottom: 0;
 }

@@ -3,8 +3,8 @@
 
 // BASE
 @import "base/_variables.scss";
-@import "base/_global";
 @import "base/_mixins";
+@import "base/_global";
 
 // MODULES
 @import "modules/_large-hero";
@@ -13,3 +13,4 @@
 @import "modules/_headline";
 @import "modules/_l-wrapper";
 @import "modules/_l-row";
+@import "modules/_generic-content-container";

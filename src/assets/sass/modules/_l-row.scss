@@ -2,12 +2,15 @@
   @include clearfix;
 
   &--gutters {
-    padding-right: -65px;
+    padding-right: -50px;
     overflow: hidden;
+    // @include tablet {
+    //   padding-right: -300px;
+    // }
   }
 
   &--gutters > div {
-    padding-right: 65px;
+    padding-right: 20px;
   }
 
   @include tablet {
@@ -15,7 +18,7 @@
       float: left;
       width: 33.33%;
       &--larger {
-        width: 36%;
+        width: 50%;
       }
     }
 
@@ -23,7 +26,7 @@
       float: left;
       width: 66.66%;
       &--smaller {
-        width: 63%;
+        width: 50%;
       }
     }
   }
