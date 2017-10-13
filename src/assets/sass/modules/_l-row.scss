@@ -1,0 +1,30 @@
+.row {
+  @include clearfix;
+
+  &--gutters {
+    padding-right: -65px;
+    overflow: hidden;
+  }
+
+  &--gutters > div {
+    padding-right: 65px;
+  }
+
+  @include tablet {
+    &__md4 {
+      float: left;
+      width: 33.33%;
+      &--larger {
+        width: 36%;
+      }
+    }
+
+    &__md8 {
+      float: left;
+      width: 66.66%;
+      &--smaller {
+        width: 63%;
+      }
+    }
+  }
+}

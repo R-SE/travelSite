@@ -1,0 +1,28 @@
+.wrapper {
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75rem;
+
+  &--medium {
+    max-width: 976px;
+  }
+  &--b-margin {
+    margin-bottom: 1rem;
+
+    @include tablet {
+      margin-bottom: 3.875rem;
+    }
+  }
+
+  .wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+
+// for text boxes, max-width: 35rem; // keep text to 50-60 (45-70) chars per line
+// font-spacing: 150%;

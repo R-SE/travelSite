@@ -1,5 +1,9 @@
 .large-hero {
   position: relative;
+  border-bottom: 10px solid $navyBlue;
+  &__image {
+    display: block;
+  }
   &__text-content {
     position: absolute;
     top: 50%;
@@ -12,9 +16,9 @@
     font-weight: 300;
     color: $navyBlue;
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 2rem;
     @include tablet {
-      font-size: 2rem;
+      font-size: 3rem;
     }
     @include laptop {
       font-size: 4rem;
@@ -24,9 +28,9 @@
     font-weight: 300;
     color: $navyBlue;
     margin: 0;
-    font-size: .8rem;
+    font-size: 1.2rem;
     @include tablet {
-      font-size: 1.2rem;
+      font-size: 2rem;
     }
     @include laptop {
       font-size: 2.6rem;
@@ -34,15 +38,15 @@
   }
   &__description {
     color: white;
-    font-size: .8rem;
+    font-size: 1.2rem;
     font-weight: 100;
     text-shadow: 2px 2px 0 $transBlack;
-    max-width: 15rem;
+    max-width: 18rem;
     margin-right: auto;
     margin-left: auto;
     @include tablet {
-      font-size: 1.3rem;
-      max-width: 20rem;
+      font-size: 1.5rem;
+      max-width: 30rem;
     }
     @include laptop {
       font-size: 2rem;

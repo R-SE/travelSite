@@ -1,10 +1,30 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    color: $darkGrey;
-    background-color: $placeholder;
+  font-family: 'Roboto', sans-serif;
+  color: $darkGrey;
+  background-color: $placeholder;
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+strong {
+  font-weight: bold;
+}
+
+//global reusable classes
+
+.t-center {
+  text-align: center;
+}
+.t-left {
+  text-align: left;
+}
+.t-right {
+  text-align: right;
+}
+
+* {
+  box-sizing: border-box;
 }
