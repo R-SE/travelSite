@@ -4,19 +4,25 @@
   &--gutters {
     padding-right: -50px;
     overflow: hidden;
-    // @include tablet {
-    //   padding-right: -300px;
-    // }
   }
 
   &--gutters > div {
-    padding-right: 20px;
+    padding-right: 0px;
+    @include tablet {
+      padding-right: 20px;
+    }
   }
 
+  &__b-margin-until-medium {
+    margin-bottom: 1rem;
+  }
   @include tablet {
+    margin-bottom: 0;
+
     &__md4 {
       float: left;
       width: 33.33%;
+
       &--larger {
         width: 50%;
       }
@@ -25,6 +31,7 @@
     &__md8 {
       float: left;
       width: 66.66%;
+
       &--smaller {
         width: 50%;
       }

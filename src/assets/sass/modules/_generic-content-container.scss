@@ -1,8 +1,11 @@
 .generic-content-container {
   p {
     line-height: 1.65;
-    font-size: 1.125 rem;
     margin: 1.8rem 0;
+    @include tablet {
+      font-size: 1.125rem;
+
+    }
   }
   p a {
     font-weight: 700;

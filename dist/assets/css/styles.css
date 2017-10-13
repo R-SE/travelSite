@@ -552,24 +552,34 @@ a {
   overflow: hidden; }
 
 .row--gutters > div {
-  padding-right: 20px; }
+  padding-right: 0px; }
+  @media (min-width: 500px) {
+    .row--gutters > div {
+      padding-right: 20px; } }
+
+.row__b-margin-until-medium {
+  margin-bottom: 1rem; }
 
 @media (min-width: 500px) {
-  .row__md4 {
-    float: left;
-    width: 33.33%; }
-    .row__md4--larger {
-      width: 50%; }
-  .row__md8 {
-    float: left;
-    width: 66.66%; }
-    .row__md8--smaller {
-      width: 50%; } }
+  .row {
+    margin-bottom: 0; }
+    .row__md4 {
+      float: left;
+      width: 33.33%; }
+      .row__md4--larger {
+        width: 50%; }
+    .row__md8 {
+      float: left;
+      width: 66.66%; }
+      .row__md8--smaller {
+        width: 50%; } }
 
 .generic-content-container p {
   line-height: 1.65;
-  font-size: 1.125 rem;
   margin: 1.8rem 0; }
+  @media (min-width: 500px) {
+    .generic-content-container p {
+      font-size: 1.125rem; } }
 
 .generic-content-container p a {
   font-weight: 700; }
