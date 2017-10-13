@@ -2,10 +2,23 @@
   @include clearfix;
 
   &--gutters {
-    padding-right: -50px;
+    padding-right: -50px; // ??? we shouldn't be using negative padding if we structure our divs properly
     overflow: hidden;
-  }
 
+    &-large {
+      @include laptop {
+        margin-right: -80px; //screw it, layout broken I'll use flexbox on my future project
+      }
+    }
+    &-large > div {
+      @include tablet{
+      padding-right: 20px;
+    }
+    @include laptop{
+      padding-right: 100px;
+    }
+    }
+  }
   &--gutters > div {
     padding-right: 0px;
     @include tablet {
@@ -26,6 +39,11 @@
       &--larger {
         width: 50%;
       }
+    }
+
+    &__md6 {
+      float: left;
+      width: 50%;
     }
 
     &__md8 {
