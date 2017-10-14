@@ -87,6 +87,7 @@ gulp.task('scripts', () =>
 var config = {
   mode: {
     css: {
+      sprite: 'svg/sprite.svg',
       render: {
         css: {
           template: 'gulp/templates/sprite.css'
@@ -101,8 +102,15 @@ gulp.task('sprites', function() {
   .pipe(gulp.dest('dist/assets/images/sprites/'))
 });
 
-gulp.task('copySpriteCSS', function() {
+// gulp.task('copySpriteGraphic', function() {
+//   return gulp.src('src/assets/images/icons/**/*.svg')
+//     .pipe(gulp.dest())
+// });
+
+gulp.task('copySpriteCSS', ['sprites'], function() {
   return gulp.src('dist/assets/images/sprites/css/*.css')
     .pipe(rename('_sprite.scss'))
     .pipe(gulp.dest('src/assets/sass/modules/'))
 });
+
+gulp.task('icons', ['sprites', 'copySpriteCSS']);

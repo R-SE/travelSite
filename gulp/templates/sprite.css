@@ -1,8 +1,14 @@
+/* Edit gulp/templates/sprite.css to make changes, instead of editing modules/_sprite which gets refreshed */
+
 {{#shapes}}
+  {{#first}}
+    .icon {
+      background-image: url('/assets/images/sprites/css/{{{sprite}}}');
+    }
+  {{/first}}
   .icon--{{base}} {
     width: {{width.outer}}px;
     height: {{height.outer}}px;
-    background-image: url('dist/assets/images/sprites/css/{{{sprite}}}');
     background-position: {{position.relative.xy}};
   }
 {{/shapes}}
