@@ -1,13 +1,17 @@
 .row {
   @include clearfix;
 
+&--t-padding {
+  padding-top: 80px;
+}
+
   &--gutters {
-    padding-right: -50px; // ??? we shouldn't be using negative padding if we structure our divs properly
+    // margin-right: -65px;
     overflow: hidden;
 
     &-large {
       @include laptop {
-        margin-right: -80px; //screw it, layout broken I'll use flexbox on my future project
+        margin-right: -80px;
       }
     }
     &-large > div {
@@ -53,6 +57,16 @@
       &--smaller {
         width: 50%;
       }
+    }
+  }
+  &--equal-height-at-medium{
+    @include tablet {
+      display: flex;
+
+    }
+    & > div {
+      float: none;
+      display: flex;
     }
   }
 }

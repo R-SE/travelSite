@@ -15,10 +15,15 @@
     margin-right: auto;
     margin-bottom: .6rem;
     @include tablet {
+        position: relative;
+        top: 8px;
         margin-right: 1rem;
         margin-left: 0;
         display: inline-block;
         margin-bottom: 0;
     }
+  }
+  &--blue {
+    color: $navyBlue;
   }
 }

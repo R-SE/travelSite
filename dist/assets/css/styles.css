@@ -399,8 +399,7 @@ template {
 
 body {
   font-family: 'Roboto', sans-serif;
-  color: #343434;
-  background-color: lime; }
+  color: #343434; }
 
 img {
   max-width: 100%;
@@ -429,6 +428,10 @@ a {
 
 .margin-bottom-none {
   margin-bottom: 0; }
+
+.drop-shadow {
+  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5); }
 
 .large-hero {
   position: relative;
@@ -504,6 +507,17 @@ a {
   .page-section--blue {
     background-color: #2f5572;
     color: white; }
+  .page-section--no-b-padding-until-medium {
+    padding-bottom: 0; }
+    @media (min-width: 500px) {
+      .page-section--no-b-padding-until-medium {
+        padding-bottom: 4.5rem; } }
+  .page-section--testimonials {
+    background-color: #e0e6ef; }
+    @media (min-width: 500px) {
+      .page-section--testimonials {
+        background: url("/assets/images/testimonials-bg.jpg") top center no-repeat;
+        background-size: cover; } }
 
 .headline {
   font-weight: 300;
@@ -550,8 +564,10 @@ a {
   clear: both;
   display: table; }
 
+.row--t-padding {
+  padding-top: 80px; }
+
 .row--gutters {
-  padding-right: -50px;
   overflow: hidden; }
   @media (min-width: 1250px) {
     .row--gutters-large {
@@ -589,6 +605,18 @@ a {
       .row__md8--smaller {
         width: 50%; } }
 
+@media (min-width: 500px) {
+  .row--equal-height-at-medium {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; } }
+
+.row--equal-height-at-medium > div {
+  float: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
 .generic-content-container p {
   font-weight: 300;
   line-height: 1.65;
@@ -615,10 +643,14 @@ a {
     margin-bottom: .6rem; }
     @media (min-width: 500px) {
       .section-title__icon {
+        position: relative;
+        top: 8px;
         margin-right: 1rem;
         margin-left: 0;
         display: inline-block;
         margin-bottom: 0; } }
+  .section-title--blue {
+    color: #2f5572; }
 
 .feature-item {
   padding-bottom: 2.5rem;
@@ -644,3 +676,32 @@ a {
         text-align: left;
         font-size: 1.875rem;
         margin-top: 1em; } }
+
+.testimonial {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 8px 1px 8px;
+  margin-bottom: 100px; }
+  @media (min-width: 500px) {
+    .testimonial {
+      padding: 0 1.8rem 1px 1.8rem;
+      margin-bottom: 0px; } }
+  .testimonial__photo {
+    overflow: hidden;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.8);
+    width: 160px;
+    height: 160px;
+    margin: 0 auto -80px;
+    position: relative;
+    top: -80px; }
+  .testimonial__title {
+    color: #2f5572;
+    font-weight: 500;
+    font-size: 1.5rem; }
+  .testimonial__subtitle {
+    color: #d59541;
+    font-weight: 400;
+    font-size: .93rem;
+    margin: -1rem 0 2rem 0; }
+  .testimonial--last {
+    margin-bottom: 0; }

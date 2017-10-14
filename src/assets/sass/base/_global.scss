@@ -5,7 +5,7 @@
 body {
   font-family: 'Roboto', sans-serif;
   color: $darkGrey;
-  background-color: $placeholder;
+  // background-color: $placeholder;
 }
 
 img {
@@ -44,4 +44,8 @@ a {
 
 .margin-bottom-none {
   margin-bottom: 0;
+}
+
+.drop-shadow {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, .5);
 }

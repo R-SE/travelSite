@@ -1,0 +1,35 @@
+.testimonial {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 8px 1px 8px;
+  margin-bottom: 100px;
+  @include tablet {
+  padding: 0 1.8rem 1px 1.8rem;
+  margin-bottom: 0px;
+}
+  &__photo {
+    overflow: hidden;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.8);
+    width: 160px;
+    height: 160px;
+    margin: 0 auto -80px;
+    position: relative;
+    top: -80px;
+  }
+
+  &__title {
+    color: $navyBlue;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+
+  &__subtitle {
+    color: $orange;
+    font-weight: 400;
+    font-size: .93rem;
+    margin: -1rem 0 2rem 0;
+  }
+  &--last {
+    margin-bottom: 0;
+  }
+}

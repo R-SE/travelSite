@@ -8,4 +8,19 @@
     background-color: $navyBlue;
     color: white;
   }
+
+  &--no-b-padding-until-medium {
+    padding-bottom: 0;
+    @include tablet {
+      padding-bottom: 4.5rem;
+    }
+  }
+
+  &--testimonials {
+    background-color: #e0e6ef;
+    @include tablet {
+      background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
+      background-size: cover;
+    }
+  }
 }
