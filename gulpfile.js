@@ -30,11 +30,6 @@ gulp.task('watch', function() {
   gulp.watch('src/assets/images/*', ['imagemin']);
   gulp.watch('src/assets/sass/**/*.scss', ['sass']);
   gulp.watch('src/*.html', ['copyhtml']);
-<<<<<<< HEAD
-  // gulp.watch('src/assets/images/icons', ['copySpriteCSS']);
-=======
-  gulp.watch('src/assets/images/icons', ['copySpriteCSS']);
->>>>>>> f3803122796708f272b92e1bf5f3328c26e02420
   gulp.watch('dist/*.html', function() {
     bs.reload()
   });
@@ -91,10 +86,7 @@ gulp.task('scripts', () =>
 var config = {
   mode: {
     css: {
-<<<<<<< HEAD
       sprite: 'svg/sprite.svg',
-=======
->>>>>>> f3803122796708f272b92e1bf5f3328c26e02420
       render: {
         css: {
           template: 'gulp/templates/sprite.css'
@@ -109,22 +101,15 @@ gulp.task('sprites', function() {
   .pipe(gulp.dest('dist/assets/images/sprites/'))
 });
 
-<<<<<<< HEAD
 // gulp.task('copySpriteGraphic', function() {
 //   return gulp.src('src/assets/images/icons/**/*.svg')
 //     .pipe(gulp.dest())
 // });
 
 gulp.task('copySpriteCSS', ['sprites'], function() {
-=======
-gulp.task('copySpriteCSS', function() {
->>>>>>> f3803122796708f272b92e1bf5f3328c26e02420
   return gulp.src('dist/assets/images/sprites/css/*.css')
     .pipe(rename('_sprite.scss'))
     .pipe(gulp.dest('src/assets/sass/modules/'))
 });
-<<<<<<< HEAD
 
 gulp.task('icons', ['sprites', 'copySpriteCSS']);
-=======
->>>>>>> f3803122796708f272b92e1bf5f3328c26e02420
