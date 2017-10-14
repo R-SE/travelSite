@@ -7,7 +7,8 @@ const gulp = require('gulp'),
   bs = require('browser-sync').create(),
   autoprefixer = require('gulp-autoprefixer'),
   svg = require('gulp-svg-sprite'),
-  rename = require('gulp-rename');
+  rename = require('gulp-rename'),
+  del = require('del');
 
 /*TOP LEVEL FUNCTIONS REMINDER
 gulp.task - DEFINE TASKS
@@ -30,6 +31,7 @@ gulp.task('watch', function() {
   gulp.watch('src/assets/images/*', ['imagemin']);
   gulp.watch('src/assets/sass/**/*.scss', ['sass']);
   gulp.watch('src/*.html', ['copyhtml']);
+  gulp.watch('src/assets/images/icons/*', ['icons']);
   gulp.watch('dist/*.html', function() {
     bs.reload()
   });
@@ -95,16 +97,17 @@ var config = {
     }
   }
 }
-gulp.task('sprites', function() {
+gulp.task('icons', ['cleanSprites', 'sprites', 'copySpriteCSS']);
+
+gulp.task('sprites', ['cleanSprites'], function() {
   return gulp.src('src/assets/images/icons/**/*.svg')
   .pipe(svg(config))
   .pipe(gulp.dest('dist/assets/images/sprites/'))
 });
 
-// gulp.task('copySpriteGraphic', function() {
-//   return gulp.src('src/assets/images/icons/**/*.svg')
-//     .pipe(gulp.dest())
-// });
+gulp.task('cleanSprites', function() {
+  return del(['dist/assets/images/sprites/'])
+});
 
 gulp.task('copySpriteCSS', ['sprites'], function() {
   return gulp.src('dist/assets/images/sprites/css/*.css')
@@ -112,4 +115,9 @@ gulp.task('copySpriteCSS', ['sprites'], function() {
     .pipe(gulp.dest('src/assets/sass/modules/'))
 });
 
-gulp.task('icons', ['sprites', 'copySpriteCSS']);
+
+
+// gulp.task('copySpriteGraphic', function() {
+//   return gulp.src('src/assets/images/icons/**/*.svg')
+//     .pipe(gulp.dest())
+// });
