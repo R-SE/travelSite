@@ -1,0 +1,15 @@
+.site-footer {
+  background-color: $navyBlue;
+  color: white;
+  padding: .5rem 0;
+  &__text {
+    font-weight: 200;
+    display: block;
+    margin-bottom: 1rem;
+    @include tablet {
+      display: inline;
+      margin-bottom: 0;
+      margin-right: 1.4rem;
+    }
+  }
+}
