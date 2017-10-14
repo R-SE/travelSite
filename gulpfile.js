@@ -5,7 +5,9 @@ const gulp = require('gulp'),
   cat = require('gulp-concat'),
   norm = require('node-normalize-scss'),
   bs = require('browser-sync').create(),
-  autoprefixer = require('gulp-autoprefixer');
+  autoprefixer = require('gulp-autoprefixer'),
+  svg = require('gulp-svg-sprite'),
+  rename = require('gulp-rename');
 
 /*TOP LEVEL FUNCTIONS REMINDER
 gulp.task - DEFINE TASKS
@@ -28,6 +30,7 @@ gulp.task('watch', function() {
   gulp.watch('src/assets/images/*', ['imagemin']);
   gulp.watch('src/assets/sass/**/*.scss', ['sass']);
   gulp.watch('src/*.html', ['copyhtml']);
+  // gulp.watch('src/assets/images/icons', ['copySpriteCSS']);
   gulp.watch('dist/*.html', function() {
     bs.reload()
   });
@@ -79,3 +82,27 @@ gulp.task('scripts', () =>
   .pipe(mini())
   .pipe(gulp.dest('dist/js'))
 );
+
+//converts img icons to spritesheet & accompanying css
+var config = {
+  mode: {
+    css: {
+      render: {
+        css: {
+          template: 'gulp/templates/sprite.css'
+        }
+      }
+    }
+  }
+}
+gulp.task('sprites', function() {
+  return gulp.src('src/assets/images/icons/**/*.svg')
+  .pipe(svg(config))
+  .pipe(gulp.dest('dist/assets/images/sprites/'))
+});
+
+gulp.task('copySpriteCSS', function() {
+  return gulp.src('dist/assets/images/sprites/css/*.css')
+    .pipe(rename('_sprite.scss'))
+    .pipe(gulp.dest('src/assets/sass/modules/'))
+});
