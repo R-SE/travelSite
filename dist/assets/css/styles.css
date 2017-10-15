@@ -708,62 +708,67 @@ a {
 
 /* Edit gulp/templates/sprite.css to make changes, instead of editing modules/_sprite which gets refreshed */
 .icon {
-  background-image: url("/assets/images/sprites/css/svg/sprite-1089d0bf.svg"); }
+  background-image: url("/assets/images/sprites/css/svg/sprite-69f19c2e.svg"); }
+
+.icon--clear-view-escapes {
+  width: 142.4px;
+  height: 59.53px;
+  background-position: 0 0; }
 
 .icon--comment {
   width: 64px;
   height: 64px;
-  background-position: 0 42.857142857142854%; }
+  background-position: 99.70443349753694% 0; }
 
 .icon--facebook {
   width: 21.23px;
   height: 42.01px;
-  background-position: 81.13948053093442% 79.15516083289798%; }
+  background-position: 26.040607071652357% 45.795830448496034%; }
 
 .icon--fire {
   width: 56px;
   height: 64px;
-  background-position: 33.333333333333336% 0; }
+  background-position: 0 99.56481481481481%; }
 
 .icon--globe {
   width: 64px;
   height: 64px;
-  background-position: 65.21739130434783% 0; }
+  background-position: 27.586206896551722% 99.56481481481481%; }
 
 .icon--instagram {
   width: 42.01px;
   height: 42.01px;
-  background-position: 99.63105005097334% 79.15516083289798%; }
+  background-position: 63.2917018534157% 49.234556504346486%; }
 
 .icon--mail {
   width: 64px;
   height: 48px;
-  background-position: 0 0; }
+  background-position: 0 48.00806451612903%; }
 
 .icon--rain {
   width: 64px;
   height: 64px;
-  background-position: 100% 0; }
+  background-position: 99.70443349753694% 59.25925925925926%; }
 
 .icon--star {
   width: 64px;
   height: 64px;
-  background-position: 32.608695652173914% 100%; }
+  background-position: 59.11330049261084% 99.56481481481481%; }
 
 .icon--twitter {
   width: 51.78px;
   height: 42.06px;
-  background-position: 93.77229640199776% 47.78258921905331%; }
+  background-position: 94.04330452560171% 98.50700323226104%; }
 
 .icon--wifi {
   width: 60px;
   height: 64px;
-  background-position: 0 100%; }
+  background-position: 68.79227053140097% 0; }
 
 .icon--youtube {
   width: 34.75px;
   height: 42px;
-  background-position: 56.27198124267292% 47.76119402985075%; }
+  background-position: 36.69752421959096% 45.792307692307695%; }
 
 .site-footer {
   background-color: #2f5572;
@@ -783,15 +788,44 @@ a {
   padding: 5px 0;
   position: absolute;
   width: 100%;
-  z-index: 2;
-  background-color: rgba(47, 85, 114, 0.3); }
+  z-index: 2; }
+  @media (min-width: 700px) {
+    .site-header {
+      background-color: rgba(47, 85, 114, 0.3); } }
   .site-header__btn-container {
     float: right; }
   .site-header__logo {
     position: absolute;
     top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) scale(0.8);
+    transform: translateX(-50%) scale(0.8);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
     background-color: #2f5572;
     padding: 1.1rem 1.5rem; }
+    @media (min-width: 700px) {
+      .site-header__logo {
+        left: auto;
+        -webkit-transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1); } }
+    .site-header__logo__graphic {
+      text-indent: -99999px; }
+  .site-header__menu-icon {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+    @media (min-width: 700px) {
+      .site-header__menu-icon {
+        display: none; } }
+  .site-header__menu-content {
+    display: none; }
+    @media (min-width: 700px) {
+      .site-header__menu-content {
+        display: block; } }
 
 .primary-nav--right {
   float: right; }

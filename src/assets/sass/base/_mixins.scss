@@ -3,6 +3,13 @@
     @content;
   }
 };
+
+@mixin tablet2 {
+   @media (min-width: #{$bp-tablet2}){
+    @content;
+  }
+};
+
 @mixin laptop {
    @media (min-width: #{$bp-laptop}){
     @content;
