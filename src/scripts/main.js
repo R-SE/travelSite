@@ -1,6 +1,12 @@
 const $ = require('jquery');
-const obj = require('./modules/objects.js');
+const Person = require('./modules/objects.js');
 
-/* HEYO */
+class Adult extends Person {
+    payTaxes(){
+      console.log(this.name + " has paid taxes.");
+    }
+}
 
-alert("js refreshing");
+var rose = new Adult("Rose Lin", "White");
+rose.greet();
+rose.payTaxes();
