@@ -8,7 +8,8 @@ const gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   svg = require('gulp-svg-sprite'),
   rename = require('gulp-rename'),
-  del = require('del');
+  del = require('del'),
+  webpack = require('webpack');
 
 /*TOP LEVEL FUNCTIONS REMINDER
 gulp.task - DEFINE TASKS
@@ -27,9 +28,10 @@ gulp.task('watch', function() {
       baseDir: "dist"
     }
   });
-  gulp.watch('src/scripts/*.js', ['scripts']);
+  // gulp.watch('src/scripts/*.js', ['scripts']);
   gulp.watch('src/assets/images/*', ['imagemin']);
   gulp.watch('src/assets/sass/**/*.scss', ['sass']);
+  gulp.watch('src/scripts/**/*.js', ['jsReload']);
   gulp.watch('src/*.html', ['copyhtml']);
   gulp.watch('src/assets/images/icons/*', ['icons']);
   gulp.watch('dist/*.html', function() {
@@ -54,12 +56,6 @@ gulp.task('imagemin', () =>
   .pipe(gulp.dest('dist/assets/images'))
 );
 
-// [mini] - Minify jscripts
-gulp.task('mini', () =>
-  gulp.src('src/scripts/*.js')
-  .pipe(mini())
-  .pipe(gulp.dest('dist/scripts'))
-);
 
 // [sass] - Runs Sass & autopfx, injects CSS into browsersync
 gulp.task('sass', function() {
@@ -81,8 +77,24 @@ gulp.task('scripts', () =>
   gulp.src('src/scripts/*.js')
   .pipe(cat('main.js'))
   .pipe(mini())
-  .pipe(gulp.dest('dist/js'))
+  .pipe(gulp.dest('dist/scripts'))
 );
+
+// [webpack] -
+gulp.task('webpack', function(callback) {
+  webpack(require('./webpack.config.js'), function(err, stats) {
+    if (err) {
+      console.log(err.toString());
+    }
+      console.log(stats.toString());
+   callback();
+ });
+});
+
+// [jsReload]
+gulp.task('jsReload', ['webpack'], function (){
+  bs.reload();
+});
 
 //converts img icons to spritesheet & accompanying css
 var config = {
