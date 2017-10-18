@@ -10,6 +10,10 @@
   }
   @include tablet2 {
     background-color: rgba($navyBlue, 0.3);
+    position: fixed;
+    &--dark {
+      background-color: rgba(darken($navyBlue, 20%), .55);
+    }
   }
 
   &__btn-container {
@@ -30,6 +34,9 @@
     @include tablet2 {
       left: auto;
       transform: translateX(0) scale(1);
+      .site-header--dark & {
+        transform: scale(.55);
+      }
     }
 
     &__graphic {

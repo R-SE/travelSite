@@ -25,5 +25,11 @@
     padding: 12px 0;
     display: block;
     text-shadow: 3px 3px 3px rgba(black, .3);
+
+    @include tablet2 {
+      &.is-current-link {
+        color: orange;
+      }
+    }
   }
 }
