@@ -27,4 +27,8 @@
   &--blue {
     color: $navyBlue;
   }
+  &--less-margin {
+    margin-bottom: 0.2rem;
+    margin-top: 0;
+  }
 }

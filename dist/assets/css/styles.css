@@ -550,6 +550,8 @@ a {
   max-width: 75rem; }
   .wrapper--medium {
     max-width: 976px; }
+  .wrapper--narrow {
+    max-width: 470px; }
   .wrapper--b-margin {
     margin-bottom: 1rem; }
     @media (min-width: 500px) {
@@ -651,6 +653,9 @@ a {
         margin-bottom: 0; } }
   .section-title--blue {
     color: #2f5572; }
+  .section-title--less-margin {
+    margin-bottom: 0.2rem;
+    margin-top: 0; }
 
 .feature-item {
   padding-bottom: 2.5rem;
@@ -938,7 +943,7 @@ a {
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); }
   @media (min-width: 700px) {
     .primary-nav a.is-current-link {
-      color: orange; } }
+      color: #d59541; } }
 
 .reveal-item {
   opacity: 0;
@@ -950,3 +955,72 @@ a {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1); }
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  background-color: rgba(255, 255, 255, 0.95);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out; }
+  .modal--is-visible {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  .modal__inner {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%); }
+  .modal__description {
+    line-height: 1.65;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: #2f5572; }
+  .modal__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    -webkit-transform: scaleX(1.2);
+    transform: scaleX(1.2);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    color: #2f5572;
+    cursor: pointer;
+    -webkit-transition: color .1s ease-out;
+    transition: color .1s ease-out; }
+    .modal__close:hover {
+      color: #d59541; }
+
+.social-icons {
+  text-align: center; }
+  .social-icons__icon {
+    display: inline-block;
+    background-color: #d59541;
+    margin: 0 5px 5px 5px;
+    width: 33%;
+    height: 72px;
+    position: relative;
+    border-radius: 5%; }
+    @media (min-width: 500px) {
+      .social-icons__icon {
+        width: 72px;
+        height: 72px;
+        margin: 0 5px; } }
+    .social-icons__icon .icon {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
