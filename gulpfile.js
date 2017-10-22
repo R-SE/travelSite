@@ -10,6 +10,7 @@ const gulp = require('gulp'),
   rename = require('gulp-rename'),
   del = require('del'),
   webpack = require('webpack');
+  // svg2png = require('svg2png');
 
 /*TOP LEVEL FUNCTIONS REMINDER
 gulp.task - DEFINE TASKS
@@ -98,6 +99,11 @@ gulp.task('jsReload', ['webpack'], function (){
 
 //converts img icons to spritesheet & accompanying css
 var config = {
+  shape: {
+    spacing: {
+      padding: 1
+    }
+  },
   mode: {
     css: {
       sprite: 'svg/sprite.svg',
@@ -126,6 +132,12 @@ gulp.task('copySpriteCSS', ['sprites'], function() {
     .pipe(rename('_sprite.scss'))
     .pipe(gulp.dest('src/assets/sass/modules/'))
 });
+// svg2png not working anyway, plus svg browser support is better now;
+// gulp.task('createPngCopy', ['copySpriteCSS'], function(){
+//   return gulp.src('dist/assets/images/sprites/css/svg/*.svg')
+//     .pipe(svg2png())
+//     .pipe(gulp.dest('dist/assets/images/sprites/css/'));
+// });
 
 
 
