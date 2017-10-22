@@ -713,7 +713,7 @@ a {
 
 /* Edit gulp/templates/sprite.css to make changes, instead of editing modules/_sprite which gets refreshed */
 .icon {
-  background-image: url("../images/sprites/css/svg/sprite-e79e95cc.svg"); }
+  background-image: url("../../images/sprites/css/svg/sprite-e79e95cc.svg"); }
 
 .icon--clear-view-escapes {
   width: 144.4px;
